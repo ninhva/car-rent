@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  mysql:
+    container_name: morent-mysql
+    platform: linux/x86_64
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: morent
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin@123
+  redis:
+    container_name: morent-redis
+    image: redis
+    ports:
+      - "6379:6379"
